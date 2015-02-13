@@ -1,0 +1,30 @@
+<%= form_for @recipe do |f|%>
+	<%= f.text_field :title, :autofocus => true %>
+	<%= f.label :title %>
+	<br>
+	<%= f.text_field :veggie1 %>
+	<%= f.label :vegatable %>
+	<br>
+	<%= f.text_field :veggie2 %>
+	<%= f.label :vegatable %>
+	<br>
+	<%= f.text_field :fruit1 %>
+	<%= f.label :fruit %>
+	<br>
+	<%= f.text_field :fruit2 %>
+	<%= f.label :fruit %>
+	<br>
+	<%= f.text_field :image %>
+	<%= f.label :image %>
+<br>
+    <%= f.submit %>
+
+<% end %>
+<br>
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container">
+	    <ul class="nav navbar-nav navbar-left">
+<li><%= link_to("Home", recipes_path)%></li>
+</ul>
+</div><!-- /.container --> 
+</nav>

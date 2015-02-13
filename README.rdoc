@@ -1,0 +1,65 @@
+Model: (singular)
+ recipe: 
+ 	Title: String
+ 	Veggie1: String
+ 	Veggie2: String
+ 	Fruit1: String
+ 	Fruit2: String
+ 	Image: Text
+
+ Controller: (plural)
+  Recipes:
+
+  def index
+  end
+
+  def new
+  end
+
+  def create
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
+ View:
+  index.html.erb
+
+  new.html.erb
+
+  show.html.erb
+
+  edit.html.erb
+
+  Build progress:
+
+ 1) in terminal: rails new juicerecipe
+ 2) brainstorm models, views, controller (mvc) in README.rdoc
+ 3) in terminal: rails s
+ 4) looked up on localhosts:3000
+
+ Implement MVC:
+ 5) rails g(enerate) controller Recipes
+ 6) methods into controller
+ 7) create view pages- index, new, show, edit
+ 8) create models: rails g model recipe title:string veggie1:string veggie2:string fruit1:string fruit2:string image:text
+ 9) create schema.rb with rake db:migrate
+ 10) config/routes- root 'controller#view' 
+ 11) views-actions (same name)--new, index, edit, show
+ 12) resources :controller name  shows entire routes/paths
+ 13) for_form created in new.html.erb
+ 14) def new @recipe = Recipe.new
+ 15) def create in controller- Recipe.create (params[:book] permit: title, veggie1, veggie2, fruit1, fruit2, image)
+ 16) index display lists
+ 17) show w/ links and lists
+ 18) def edit & def update
+ 19) def destroy
+ 20) partials to _form
+ 
+
