@@ -13,13 +13,11 @@ gem 'autoprefixer-rails'
 gem 'devise'
 
 group :development, :test do
-	gem 'sqlite3' 
-end
+	gem 'sqlite3' end
 
 group :production do
 	gem 'pg'
-	gem 'rails_12factor' 
-end
+	gem 'rails_12factor' end
 
 group :doc do
 	gem 'sdoc', require: false
