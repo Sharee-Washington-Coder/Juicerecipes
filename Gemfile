@@ -13,6 +13,7 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'masonry-rails'
 
 group :development, :test do
 	gem 'sqlite3' end
