@@ -15,3 +15,11 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Make sure that recipes are not pushed to heroku
+/public/system/*
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+.DS_Store
