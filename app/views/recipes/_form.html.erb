@@ -1,4 +1,4 @@
-<%= form_for @recipe, html: { multipart: true } do |f|%>
+<%= form_for @recipe, :html => { :multipart => true } do |f|%>
 	<%= f.text_field :title, :autofocus => true %>
 	<%= f.label :title %>
 	<br>

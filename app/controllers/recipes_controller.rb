@@ -47,7 +47,8 @@ before_action :authenticate_user!, except: [:index, :show]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    #strong paramaters
     def recipe_params
-      params.require(:recipe).permit(:title, :veggie1, :veggie2, :fruit1, :fruit2, :image)
+      params.require(:recipe).permit(:title, :veggie1, :veggie2, :fruit1, :fruit2, images_attributes: [:image])
 end
 end
