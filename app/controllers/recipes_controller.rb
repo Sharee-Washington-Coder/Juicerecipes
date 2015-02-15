@@ -35,7 +35,9 @@ before_action :authenticate_user!, except: [:index, :show]
     recipe.delete
     redirect_to(recipes_path)
   end
+
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
       @recipe = Recipe.find(params[:id])
@@ -50,5 +52,5 @@ before_action :authenticate_user!, except: [:index, :show]
     # strong paramaters
     def recipe_params
       params.require(:recipe).permit(:title, :veggie1, :veggie2, :fruit1, :fruit2, :image)
-end
+  end
 end
