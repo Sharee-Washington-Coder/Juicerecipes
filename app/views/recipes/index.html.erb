@@ -28,7 +28,7 @@
 			<li><%= recipe.veggie2 %></li>
 			<li><%= recipe.fruit1 %></li>
 			<li><%= recipe.fruit2 %></li><br>
-			<%= link_to image_tag(recipe.image(:thumb)), recipe %><br>
+			<%= link_to image_tag(recipe.image.url(:thumb)), recipe %><br>
 		</ul><br>
 	</li>
 	<% end %>
