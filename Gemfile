@@ -14,7 +14,6 @@ gem 'devise'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'masonry-rails'
-gem 'strong_parameters'
 
 group :development, :test do
 	gem 'sqlite3' end
