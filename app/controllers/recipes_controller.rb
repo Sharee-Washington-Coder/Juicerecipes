@@ -32,7 +32,7 @@ end
   def update
     recipe = Recipe.find(params[:id])
     recipe.update_attributes(params[:recipe].permit(:title, :veggie1, :veggie2, :fruit1, :fruit2, :image))
-    redirect_to(recipe)
+    redirect_to(recipes_path)
   end
 
   def destroy
