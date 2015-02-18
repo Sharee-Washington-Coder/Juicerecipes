@@ -1,20 +1,24 @@
 class RecipesController < ApplicationController
 before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
-before_action :authenticate_user!, except: [:index, :show]
-  
-  
+before_action :authenticate_user!, except: [:index]
+
   def index
-    @recipes = Recipe.all
-  end
+    # order recipes by creation date and max 2 recipes per page, then paginator.
+    @recipes = Recipe.all.order(created_at: :desc).paginate(page: params[:page], per_page: 2)
+end
 
   def new
-    @recipe = Recipe.new
+    @recipe = current_user.recipes.build
   end
 
   def create
-    recipe = Recipe.create(params[:recipe].permit(:title, :veggie1, :veggie2, :fruit1, :fruit2, :image))
-      redirect_to(recipe)
+    @recipe = current_user.recipes.build(recipe_params)
+    if @recipe.save
+      redirect_to @recipe, notice: 'Recipe was successfully created.'
+    else
+      render action: 'new'
+    end
   end
 
   def show
@@ -37,6 +41,8 @@ before_action :authenticate_user!, except: [:index, :show]
     redirect_to(recipes_path)
   end
 
+before_action :correct_user, only: [:edit, :update, :destroy] 
+  
   private
 
     # Use callbacks to share common setup or constraints between actions.

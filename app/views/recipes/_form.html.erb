@@ -1,4 +1,5 @@
 <%= form_for @recipe, html: { multipart: true } do |f| %>
+	
 	<%= f.text_field :title, :autofocus => true %>
 	<%= f.label :title %>
 	<br>
@@ -20,6 +21,7 @@
     <%= f.submit %>
 
 <% end %>
+
 <br>
 <nav class="navbar navbar-default" role="navigation">
 	<div class="container">

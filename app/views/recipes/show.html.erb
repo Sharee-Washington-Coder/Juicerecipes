@@ -4,6 +4,7 @@
 <p>Two vegetables & two fruits green juices.  Mix ingredients in juicer with 1 cup of either water or low-fat milk.</p>
 
 <ul>
+<% if @recipe.user == current_user %><% end %>
 	<p><%= @recipe.title %></p>
 	<li><%= @recipe.veggie1 %></li>
 	<li><%= @recipe.veggie2 %></li>
@@ -15,8 +16,7 @@
 <nav class="navbar navbar-default" role="navigation">
 	<div class="container">
 	    <ul class="nav navbar-nav navbar-left">
-	    <% if @recipe.user == current_user %>
-	    <% end %>
+	    <% if current_user && @recipe.user == current_user %><% end %>
 <li><%= link_to("Edit", edit_recipe_path)%></li>
 <li><%= link_to("Delete", @recipe, :method => :delete)%></li>
 <li><%= link_to("Home", recipes_path)%></li>
